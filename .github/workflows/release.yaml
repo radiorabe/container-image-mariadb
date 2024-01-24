@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+
+jobs:
+  release-container:
+    uses: radiorabe/actions/.github/workflows/release-container.yaml@v0.20.3
+    with:
+      image: ghcr.io/radiorabe/mariadb
+      name: mariadb
+      display-name: RaBe MariaDB in UBI9
+      tags: minimal rhel9 ubi9 rabe mariadb
+      cosign-base-image-only: true
+  mkdocs:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: none
+      checks: none
+      contents: write # for pushing gh-pages branch
+      deployments: none
+      issues: none
+      packages: none
+      pull-requests: none
+      repository-projects: none
+      security-events: none
+      statuses: none
+      id-token: none
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: pip install mkdocs mkdocs-material mkdocs-gen-files mkdocs-literate-nav mkdocs-section-index
+      - run: mkdocs build
+      - run: mkdocs gh-deploy
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
