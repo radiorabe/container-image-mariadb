@@ -10,7 +10,7 @@ on:
 
 jobs:
   release-container:
-    uses: radiorabe/actions/.github/workflows/release-container.yaml@v0.21.1
+    uses: radiorabe/actions/.github/workflows/release-container.yaml@v0.21.2
     with:
       image: ghcr.io/radiorabe/mariadb
       name: mariadb
