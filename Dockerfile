@@ -1,4 +1,4 @@
-FROM quay.io/sclorg/mariadb-105-c9s:20240501 AS upstream
+FROM quay.io/sclorg/mariadb-105-c9s:20241030 AS upstream
 FROM ghcr.io/radiorabe/ubi9-minimal:0.7.3 AS build
 
 ENV MYSQL_VERSION=10.5 \
