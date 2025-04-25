@@ -84,7 +84,7 @@ RUN    chroot /mnt/rootfs ln -s /bin/mariadb-install-db /bin/mysql_install_db \
     && chroot /mnt/rootfs ln -s /sbin/mariadbd /usr/libexec/mysqld \
     && rm -rf /mnt/rootfs/var/lib/mysql
 
-FROM scratch as app
+FROM scratch AS app
 
 ENV CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/mysql \
     STI_SCRIPTS_PATH=/usr/libexec/s2i \
