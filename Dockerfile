@@ -1,8 +1,7 @@
 FROM quay.io/sclorg/mariadb-105-c9s:20250416 AS upstream
 FROM ghcr.io/radiorabe/ubi9-minimal:0.8.3 AS build
 
-ENV MYSQL_VERSION=10.5 \
-    APP_DATA=/opt/app-root/src \
+ENV APP_DATA=/opt/app-root/src \
     CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/mysql \
     STI_SCRIPTS_PATH=/usr/libexec/s2i \
     HOME=/var/lib/mysql
