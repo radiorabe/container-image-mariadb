@@ -1,5 +1,5 @@
-FROM quay.io/sclorg/mariadb-105-c9s:20250519 AS upstream
-FROM ghcr.io/radiorabe/ubi9-minimal:0.8.3 AS build
+FROM quay.io/sclorg/mariadb-105-c9s:20250521 AS upstream
+FROM ghcr.io/radiorabe/ubi9-minimal:0.9.0 AS build
 
 ENV APP_DATA=/opt/app-root/src \
     CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/mysql \
