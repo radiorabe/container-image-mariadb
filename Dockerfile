@@ -1,4 +1,4 @@
-FROM quay.io/sclorg/mariadb-105-c9s:20260107 AS upstream
+FROM quay.io/sclorg/mariadb-105-c9s:20260112 AS upstream
 FROM ghcr.io/radiorabe/ubi9-minimal:0.11.2 AS build
 
 ENV APP_DATA=/opt/app-root/src \
