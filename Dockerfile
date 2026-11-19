@@ -1,5 +1,5 @@
-FROM quay.io/sclorg/mariadb-105-c9s:20260909@sha256:8c2d2731d4175671eea1620f034b6308da888cbb02f01575e288ba4cd7db083d AS upstream
-FROM ghcr.io/radiorabe/ubi9-minimal:0.12.0@sha256:ddf3ac33c48b5005cc325732cb547279a926f29b3db9adcbd844f1cf94dcf831 AS build
+FROM quay.io/sclorg/mariadb-105-c9s:20261118@sha256:ba18198671da84cbf32df10255039820d045bf6c6d578bd787061520bb964de2 AS upstream
+FROM ghcr.io/radiorabe/ubi9-minimal:0.12.1@sha256:9a3f83629f9dd656727266b28ceb962824a337c34dab911ff4f0fce75acea642 AS build
 
 ENV APP_DATA=/opt/app-root/src \
     CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/mysql \
